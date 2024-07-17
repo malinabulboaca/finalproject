@@ -16,3 +16,11 @@ export const products = [
         description: "bla bla miere de tei"
     }
 ]
+
+export const blog = [
+    {
+        title: "Miere de tei",
+        text: "blabla",
+        photos: []
+    }
+]

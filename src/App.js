@@ -13,7 +13,7 @@ function App() {
         <Hero />
 
         <Routes>
-          <Route index element={Home} />
+          <Route index element={<Home/>} />
           <Route path="/stupina" element={<Stupina />} />
           <Route path="/blog/:id" element={<Blog />} />
         </Routes>

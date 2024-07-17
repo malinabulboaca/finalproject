@@ -5,7 +5,7 @@ import image from "./Albina.jpg";
 
 function Header() {
   return (
-    <Navbar className="bg-body-tertiary" data-bs-theme="light">
+    <Navbar className="bg-body-tertiary" data-bs-theme="light" expand="lg" >
       <Container>
         <img
           src={image}
