@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/header";
 import Home from "./pages/home";
-import Stupina from "./pages/stupina";
+import CarouselImages from "./components/CarouselImages";
 import Blog from "./pages/blog";
 import Hero from "./components/hero/hero";
+import "./index.css";
+import Stupina from "./pages/stupina";
 
 function App() {
   return (
@@ -13,7 +15,7 @@ function App() {
         <Hero />
 
         <Routes>
-          <Route index element={<Home/>} />
+          <Route path="/" element={<Home />} />
           <Route path="/stupina" element={<Stupina />} />
           <Route path="/blog/:id" element={<Blog />} />
         </Routes>

@@ -1,11 +1,23 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import image from "./Albina.jpg";
 
 function Header() {
+  const [type, setType] = useState();
+
+  const navigate = useNavigate();
+
+  const handleOnSelectType = (selected) => {
+    handleOnSelectType(selected);
+    if (selected === "Home") navigate("/");
+    else if (selected === "Stupina") navigate("/stupina");
+  };
   return (
-    <Navbar className="bg-body-tertiary" data-bs-theme="light" expand="lg" >
+    <Navbar className="bg-body-tertiary" data-bs-theme="light" expand="lg">
       <Container>
         <img
           src={image}
