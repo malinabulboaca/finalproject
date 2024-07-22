@@ -1,5 +1,6 @@
 export const products = [
   {
+    productIndex: 1,
     name: "Miere de rapita",
     price: 20,
     weigth: "500g",
@@ -7,6 +8,7 @@ export const products = [
     description: "Cantitate: ",
   },
   {
+    productIndex: 1,
     name: "Miere de rapita",
     price: 30,
     weigth: "1kg",
@@ -14,6 +16,7 @@ export const products = [
     description: "Cantitate: ",
   },
   {
+    productIndex: 2,
     name: "Miere poliflora",
     price: 30,
     weigth: "1kg",
