@@ -1,15 +1,8 @@
-import { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./carousel.css";
 
 function CarouselImages() {
-  const [autoPlay, setAutoPlay] = useState(true);
-
-  const handleonClick = () => {
-    setAutoPlay(false);
-  };
-
   return (
     <div className="slider-animated">
       <Carousel
@@ -17,8 +10,7 @@ function CarouselImages() {
         showIndicators={true}
         showStatus={false}
         interval={2000}
-        autoPlay={autoPlay}
-        onClickItem={handleonClick}
+        autoPlay={true}
         infiniteLoop={true}
       >
         <div>
