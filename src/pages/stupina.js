@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import CarouselImages from "../components/CarouselImages";
+import CarouselImages from "../components/carousel/CarouselImages";
 
 const Stupina = () => {
   return (

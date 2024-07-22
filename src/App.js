@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/header";
 import Home from "./pages/home";
-import CarouselImages from "./components/CarouselImages";
 import Blog from "./pages/blog";
 import Hero from "./components/hero/hero";
 import "./index.css";
