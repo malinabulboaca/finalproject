@@ -1,5 +1,6 @@
 export const products = [
   {
+    id: 1,
     productIndex: 1,
     name: "Miere de rapita",
     price: 25,
@@ -8,6 +9,7 @@ export const products = [
     description: "Cantitate: ",
   },
   {
+    id: 2,
     productIndex: 1,
     name: "Miere de rapita",
     price: 30,
@@ -16,6 +18,7 @@ export const products = [
     description: "Cantitate: ",
   },
   {
+    id: 3,
     productIndex: 2,
     name: "Miere poliflora",
     price: 25,
@@ -24,6 +27,7 @@ export const products = [
     description: "Cantitate: ",
   },
   {
+    id: 4,
     productIndex: 2,
     name: "Miere poliflora",
     price: 30,
@@ -32,6 +36,7 @@ export const products = [
     description: "Cantitate: ",
   },
   {
+    id: 5,
     productIndex: 3,
     name: "Miere mana de padure",
     price: 35,
@@ -40,6 +45,7 @@ export const products = [
     description: "Cantitate: ",
   },
   {
+    id:6,
     productIndex: 3,
     name: "Miere mana de padure",
     price: 65,
@@ -48,6 +54,7 @@ export const products = [
     description: "Cantitate: ",
   },
   {
+    id: 7,
     productIndex: 3,
     name: "Miere de salcam",
     price: 35,

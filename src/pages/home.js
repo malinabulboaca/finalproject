@@ -1,11 +1,15 @@
+import { useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { products } from "../data/products";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { IoMdCart } from "react-icons/io";
+import { Ctx } from "../context/store";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { setCartProducts } = useContext(Ctx);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -13,6 +17,12 @@ const Home = () => {
   const handleRedirect = (id) => {
     navigate(`/blog/${id}`);
   };
+
+  const handleAddToCart = (product) => {
+    setCartProducts(state => {
+      return [...state, product]
+    })
+  }
 
   return (
     <div className="container">
@@ -32,12 +42,15 @@ const Home = () => {
                     {product.weigth}
                   </p>
                 </Card.Text>
-                <Button
-                  variant="outline-secondary"
-                  onClick={() => handleRedirect(product.productIndex)}
-                >
-                  Citeste mai mult...
-                </Button>
+                <div className="d-flex justify-content-between align-items-center">
+                  <button className="custom-icon-btn" onClick={() => handleAddToCart(product)}><IoMdCart size="1.5rem" /></button>
+                  <Button
+                    variant="outline-secondary"
+                    onClick={() => handleRedirect(product.productIndex)}
+                  >
+                    Citeste mai mult...
+                  </Button>
+                </div>
               </div>
             </Card.Body>
           </Card>

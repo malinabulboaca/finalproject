@@ -1,13 +1,13 @@
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: x-large;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  background-color: rgb(247, 251, 252)
-  
+  background-color: rgb(247, 251, 252);
 }
 
 #root {
@@ -15,63 +15,57 @@ body {
 }
 
 .navbar {
-  font-weight:900;
+  font-weight: 900;
   font-style: oblique;
   margin-left: 6px;
   margin-right: auto;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-
 .navbar-collapse {
-  text-align: right; 
+  text-align: right;
 }
 
 .navbar-nav {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; 
+  align-items: flex-end;
 }
 
 .navbar-nav .nav-link {
-  padding: 10px 15px; 
+  padding: 10px 15px;
 }
 
-
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .navbar-nav {
-      flex-direction: row; 
-      align-items: center; 
+    flex-direction: row;
+    align-items: center;
   }
 }
 
-
 .header-text {
-  background: linear-gradient(0deg, rgba(195,193,34,1) 0%, rgba(237,232,200,0.7764355742296919) 100%); 
+  background: linear-gradient(
+    0deg,
+    rgba(195, 193, 34, 1) 0%,
+    rgba(237, 232, 200, 0.7764355742296919) 100%
+  );
   font-size: 25px;
   border-top-left-radius: 3rem;
 }
 
-
-
 .cards-details {
- text-align:end;
- font-size: medium; 
- font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
- font-weight: bolder;
- color: grey;
- 
-
+  text-align: end;
+  font-size: medium;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bolder;
+  color: grey;
 }
 
 .card-title {
- font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
- color:  #ac9b07;
- font-size:25px;
- text-align: start;
- 
- 
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #ac9b07;
+  font-size: 25px;
+  text-align: start;
 }
 
 .container {
@@ -79,42 +73,63 @@ body {
   padding-top: 0.5rem;
 }
 
-
 .blog-articles-wrapper {
   margin: 1rem auto;
   max-width: 60rem;
-  padding-top: 2rem; 
+  padding-top: 2rem;
   text-align: center;
-
 }
 
-
-
 .blog-articles-wrapper article {
-  background: linear-gradient(121deg, rgb(121, 121, 113) 0%, rgba(206, 206, 184, 0.902) 100%);
+  background: linear-gradient(
+    121deg,
+    rgb(121, 121, 113) 0%,
+    rgba(206, 206, 184, 0.902) 100%
+  );
   color: white;
   border-radius: 10px;
   padding: 1rem;
   margin: 3rem 0;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-
-
 .btn:hover {
-  background: linear-gradient(121deg, rgb(223, 228, 157) 0%, rgba(137, 139, 2, 0.902) 100%);
-  
- 
+  background: linear-gradient(
+    121deg,
+    rgb(223, 228, 157) 0%,
+    rgba(137, 139, 2, 0.902) 100%
+  );
 }
 
 .btn {
   color: grey;
-  font-weight: bold; 
+  font-weight: bold;
   border-color: grey;
-  
 }
 
+.custom-icon-btn {
+  border: none;
+  background: none;
+  outline: none;
+  color: gray;
+}
 
+.custom-icon-btn:active {
+  color: green;
+  transform: scale(1.2);
+}
 
-
-
+.cart-qty {
+  display: flex;
+  font-size: 18px;
+  top: -10px;
+  right: -17px;
+  border: 1px solid red;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  color: white;
+}

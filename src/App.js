@@ -6,6 +6,7 @@ import Hero from "./components/hero/hero";
 import "./index.css";
 import Stupina from "./pages/stupina";
 import Footer from "./components/footer/footer";
+import Comanda from "./pages/comanda";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/stupina" element={<Stupina />} />
           <Route path="/blog/:id" element={<Blog />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/comanda" element={<Comanda />}/>
         </Routes>
         <Footer />
       </Router>
