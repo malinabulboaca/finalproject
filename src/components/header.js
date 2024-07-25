@@ -12,12 +12,13 @@ function Header() {
         <img
           src={image}
           alt="Image"
-          weight="60"
-          height="60
+          weight="50"
+          height="50
         "
         />
+
         <div className="navbar">
-          <Navbar.Brand>Stupul de miere</Navbar.Brand>
+          <Navbar.Brand className="header-text">Stupul de miere</Navbar.Brand>
         </div>
 
         <Navbar.Toggle />

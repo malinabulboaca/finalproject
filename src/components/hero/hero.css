@@ -1,7 +1,10 @@
 .hero-wraper {
     font-weight: bold;
-    color: black;
-    background-color: rgb(204, 231, 222);
-    padding: 0.5rem;
+    color: black; 
+    background: linear-gradient(0deg, rgba(195,193,34,1) 0%, rgba(237,232,200,0.7764355742296919) 100%);
     text-align: center;
+    padding: 1rem;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
 }

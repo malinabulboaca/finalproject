@@ -6,8 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  
-  
+  background-color: rgb(247, 251, 252)
   
 }
 
@@ -16,40 +15,103 @@ body {
 }
 
 .navbar {
-  font-weight: bold;
+  font-weight:900;
   font-style: oblique;
-  box-shadow: 2px 1px 2px 1px rgb(176, 187, 183);
-  margin-left: 1px;
+  margin-left: 6px;
   margin-right: auto;
-  background-color: rgb(204, 231, 222);
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   
 }
 
+
+.navbar-collapse {
+  text-align: right; 
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+}
+
+.navbar-nav .nav-link {
+  padding: 10px 15px; 
+}
+
+
+@media (min-width: 992px) {
+  .navbar-nav {
+      flex-direction: row; 
+      align-items: center; 
+  }
+}
+
+
+.header-text {
+  background: linear-gradient(0deg, rgba(195,193,34,1) 0%, rgba(237,232,200,0.7764355742296919) 100%); 
+  font-size: 25px;
+  border-top-left-radius: 3rem;
+}
+
+
+
 .cards-details {
  text-align:end;
- font-size: medium;
+ font-size: medium; 
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ font-weight: bolder;
+ color: grey;
+ 
+
+}
+
+.card-title {
+ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ color:  #ac9b07;
+ font-size:25px;
+ text-align: start;
  
  
 }
 
-.card-title {
- font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
- color: rgb(136, 182, 167);
- font-size: x-large;
- 
+.container {
+  position: relative;
+  padding-top: 0.5rem;
 }
+
 
 .blog-articles-wrapper {
   margin: 1rem auto;
   max-width: 60rem;
+  padding-top: 2rem; 
+  text-align: center;
+
 }
 
+
+
 .blog-articles-wrapper article {
-  background-color:rgb(0, 40, 27);
+  background: linear-gradient(121deg, rgb(121, 121, 113) 0%, rgba(206, 206, 184, 0.902) 100%);
   color: white;
   border-radius: 10px;
   padding: 1rem;
-  margin: 1rem 0;
+  margin: 3rem 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+.btn:hover {
+  background: linear-gradient(121deg, rgb(223, 228, 157) 0%, rgba(137, 139, 2, 0.902) 100%);
+  
+ 
+}
+
+.btn {
+  color: grey;
+  font-weight: bold; 
+  border-color: grey;
+  
 }
 
 

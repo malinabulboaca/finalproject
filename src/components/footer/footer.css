@@ -1,0 +1,52 @@
+.footer {
+    display: flex;
+    padding: 20px;
+    background: linear-gradient(0deg, rgba(195,193,34,1) 0%, rgba(237,232,200,0.7764355742296919) 100%);
+    color: grey;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    
+    
+  }
+  
+  .footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 300px; 
+    text-align: center;
+    
+  }
+
+  .contact-info {
+    color: black;
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 40px;
+  }
+
+  .social-icons  {
+    color: #0056b3; 
+    transition: color 0.3s;
+  } 
+
+  .social-icon {
+    margin-right: 25px;
+  }
+    
+   
+
+  
+  .social-icons:hover {
+    color: #024994; 
+  }
+
+
+  
+  
+
+  
+ 
+
+
+

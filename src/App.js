@@ -5,6 +5,7 @@ import Blog from "./pages/blog";
 import Hero from "./components/hero/hero";
 import "./index.css";
 import Stupina from "./pages/stupina";
+import Footer from "./components/footer/footer";
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/stupina" element={<Stupina />} />
           <Route path="/blog/:id" element={<Blog />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
