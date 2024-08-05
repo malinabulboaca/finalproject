@@ -134,3 +134,11 @@ body {
   color: white;
 }
 
+form td {
+  padding: 0.5rem;
+}
+
+form input,textarea {
+  border-radius: 5px;
+}
+

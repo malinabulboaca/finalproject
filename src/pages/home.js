@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import { products } from "../data/products";
 import { IoMdCart } from "react-icons/io";
 import { Ctx } from "../context/store";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -22,10 +23,21 @@ const Home = () => {
     setCartProducts(state => {
       return [...state, product]
     })
+    toast.success(`${product.name} a fost adăugat în coș.`, {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored"
+    })
   }
 
   return (
     <div className="container">
+      <ToastContainer />
       <div className="d-flex justify-content-center flex-wrap gap-5 mt-5">
         {products.map((product, index) => (
           <Card style={{ width: "18rem" }} key={product.name + "-" + index}>
