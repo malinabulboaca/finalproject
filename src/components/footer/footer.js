@@ -26,7 +26,8 @@ function Footer() {
             <FontAwesomeIcon icon={faPhone} /> 0754333292
           </p>
           <p>
-            <FontAwesomeIcon icon={faEnvelope} /> stupuldemiere@gmail.com
+            <FontAwesomeIcon icon={faEnvelope} />{" "}
+            comenzi.stupuldemiere@gmail.com
           </p>
         </div>
       </div>
