@@ -6,10 +6,9 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Comanda = () => {
   const [spinner, setSpinner] = useState(false);
-  const { cartProducts } = useContext(Ctx);
+  const { cartProducts, setCartProducts } = useContext(Ctx);
   const [groupedProducts, setGroupedProducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [quantities, setQuantities] = useState({});
 
   useEffect(() => {
     groupProductsWithSameId();
@@ -17,7 +16,7 @@ const Comanda = () => {
 
   useEffect(() => {
     setTotalPrice(getTotalPrice());
-  }, [groupedProducts, quantities]);
+  }, [groupedProducts]);
 
   const groupProductsWithSameId = () => {
     const grouped = cartProducts.reduce((acc, prod) => {
@@ -29,32 +28,30 @@ const Comanda = () => {
       return acc;
     }, {});
     setGroupedProducts(Object.values(grouped));
-
-    setQuantities(
-      Object.fromEntries(
-        Object.values(grouped).map((prod) => [prod.id, prod.count])
-      )
-    );
   };
 
-  const incrementQuantity = (id) =>
-    setQuantities((prev) => ({
-      ...prev,
-      [id]: (prev[id] ?? 0) + 1,
-    }));
+  const incrementQuantity = (id) => {
+    const tempArr = groupedProducts.map(obj => ({...obj}));
+      const found = tempArr.find(prod => prod.id === id);
+      found.count++;
+      setGroupedProducts(tempArr);
+  }
+    
 
-  const decrementQuantity = (id) =>
-    setQuantities((prev) => ({
-      ...prev,
-      [id]: ((prev[id] ?? 0) - 1, 0),
-    }));
+  const decrementQuantity = (id) => {
+    const tempArr = groupedProducts.map(obj => ({...obj}));
+    const found = tempArr.find(prod => prod.id === id);
+    if(found.count === 0)return;
+    found.count--;
+    setGroupedProducts(tempArr);
+  }
+
 
   const handleQuantityChange = (id, value) => {
-    const newValue = Math.max(0, value);
-    setQuantities((prevQuantities) => ({
-      ...prevQuantities,
-      [id]: newValue,
-    }));
+    const tempArr = groupedProducts.map(obj => ({...obj}));
+    const found = tempArr.find(prod => prod.id === id);
+    found.count = value;
+    setGroupedProducts(tempArr);
   };
 
   const getTotalPrice = () => {
@@ -111,6 +108,7 @@ const Comanda = () => {
         )
         .then(
           (result) => {
+            setCartProducts([])
             toast.success("Comanda a fost trimisă cu succes.", {
               position: "bottom-right",
               autoClose: 5000,
@@ -161,20 +159,8 @@ const Comanda = () => {
     }
   };
 
-  const handleUpdateCart = () => {
-    setGroupedProducts((prevGroupedProducts) => {
-      const updatedProducts = prevGroupedProducts
-        .map((prod) => ({
-          ...prod,
-          count: quantities[prod.id] ?? 0,
-        }))
-        .filter((prod) => prod.count > 0);
-      setQuantities(
-        Object.fromEntries(updatedProducts.map((prod) => [prod.id, prod.count]))
-      );
-      return updatedProducts;
-    });
-  };
+
+  console.log(groupedProducts)
 
   return (
     <>
@@ -198,10 +184,9 @@ const Comanda = () => {
                       -
                     </button>
                     <input
-                      value={quantities[prod.id] || 0}
-                      onChange={(e) =>
-                        handleQuantityChange(prod.id, parseInt(e.target.value))
-                      }
+                      type="number"
+                      value={prod.count || 0}
+                      onChange={(e) => handleQuantityChange(prod.id, e.target.value)}
                       style={{ width: "50px", textAlign: "center" }}
                     />
                     <button
@@ -216,7 +201,7 @@ const Comanda = () => {
                   </td>
                   <td>{prod.name}</td>
                   <td>{prod.weight}</td>
-                  <td>{prod.price * (quantities[prod.id] || 0)} Lei</td>
+                  <td>{prod.price * prod.count} Lei</td>
                 </tr>
               ))}
               <tr>
@@ -231,20 +216,6 @@ const Comanda = () => {
         <div style={{ maxWidth: "60rem", margin: "auto" }}>
           {cartProducts.length === 0 ? <p>Coșul este gol.</p> : null}
         </div>
-
-        <Button
-          onClick={handleUpdateCart}
-          variant="primary-outline"
-          className="d-flex align-items-center gap-3"
-        >
-          <span>Actualizeaza cos</span>
-          {spinner && (
-            <Spinner animation="border" role="status" size="sm">
-              <span className="visually-hidden">Loading...</span>
-            </Spinner>
-          )}
-        </Button>
-
         <br />
       </div>
       <div
